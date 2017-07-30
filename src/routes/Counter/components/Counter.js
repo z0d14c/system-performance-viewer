@@ -1,16 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import RaisedButton from 'material-ui/RaisedButton';
 
 export const Counter = ({ counter, increment, doubleAsync }) => (
   <div style={{ margin: '0 auto' }} >
     <h2>Counter: {counter}</h2>
-    <button className='btn btn-primary' onClick={increment}>
+    <RaisedButton className='btn btn-primary' onClick={increment}>
       Increment
-    </button>
+    </RaisedButton>
     {' '}
-    <button className='btn btn-secondary' onClick={doubleAsync}>
+    <RaisedButton className='btn btn-secondary' onClick={doubleAsync}>
       Double (Async)
-    </button>
+    </RaisedButton>
   </div>
 )
 Counter.propTypes = {
