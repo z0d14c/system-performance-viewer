@@ -1,18 +1,25 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
-import PropTypes from 'prop-types'
+import Grid from 'material-ui/Grid'
+import AppBar from 'material-ui/AppBar';
+import Toolbar from 'material-ui/Toolbar';
+import Typography from 'material-ui/Typography';
 import './PageLayout.css'
 
 export const PageLayout = ({ children }) => (
-  <div className='text-center'>
-    <h1>System Performance Viewer</h1>
-    <div className='page-layout__viewport'>
-      {children}
-    </div>
-  </div>
+  <Grid container gutter={24}>
+    <AppBar position="static" color="default">
+      <Toolbar>
+        <Typography type="title" color="inherit">
+          System Performance Viewer
+          </Typography>
+      </Toolbar>
+    </AppBar>
+    {children}
+  </Grid>
 )
-PageLayout.propTypes = {
-  children: PropTypes.node,
-}
 
 export default PageLayout
+      // <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
+    // {' · '}
+    // <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>

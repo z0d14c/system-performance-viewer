@@ -1,6 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import RaisedButton from 'material-ui/RaisedButton';
+import RaisedButton from 'material-ui/Button';
 
 export const Counter = ({ counter, increment, doubleAsync }) => (
   <div style={{ margin: '0 auto' }} >
@@ -14,10 +13,5 @@ export const Counter = ({ counter, increment, doubleAsync }) => (
     </RaisedButton>
   </div>
 )
-Counter.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-  doubleAsync: PropTypes.func.isRequired,
-}
 
 export default Counter
