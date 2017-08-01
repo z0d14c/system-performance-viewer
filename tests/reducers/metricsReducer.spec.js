@@ -1,9 +1,7 @@
-import React from 'react'
-import PageLayout from 'layouts/PageLayout/PageLayout'
-import { shallow } from 'enzyme'
+import metricsReducer, { toggleMetricReducer } from 'reducers/metricsReducer'
 
 describe('(Layout) PageLayout', () => {
-  /*it('renders as a <div>', () => {
+  it('renders as a <div>', () => {
     shallow(<PageLayout />).should.have.tagName('div')
   })
 
@@ -20,5 +18,5 @@ describe('(Layout) PageLayout', () => {
     )
       .find('.page-layout__viewport')
       .should.contain(<Child />)
-  })*/
+  })
 })

@@ -20,6 +20,3 @@ export const PageLayout = ({ children }) => (
 )
 
 export default PageLayout
-      // <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
-    // {' · '}
-    // <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>

@@ -18,10 +18,6 @@ export const HomeRoute = (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const SystemMetrics = require('./containers/HomeContainer').default
-      const reducer = require('./modules/metricsReducer').default
-
-      /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'metrics', reducer })
 
       /*  Return getComponent   */
       cb(null, SystemMetrics)

@@ -1,23 +1,21 @@
 import React from 'react'
+import { FormGroup, FormControlLabel } from 'material-ui/Form';
+import { shallow } from 'enzyme'
 import { HomeView } from 'routes/Home/components/HomeView'
-import { render } from 'enzyme'
+import { initialState } from 'reducers/metricsReducer'
+// import { timeseriesList } from 'constants/timeseriesConstants';
 
 describe('(View) Home', () => {
-  let _component
 
-  beforeEach(() => {
-    _component = render(<HomeView />)
+  it('Should output a form group', () => {
+    const wrapper = shallow(<HomeView metrics={initialState} />)
+    const formGroups = wrapper.find(FormGroup)
+    expect(formGroups.length).to.not.equal(0)
   })
 
-  it('Renders a welcome message', () => {
-    const welcome = _component.find('h4')
-    expect(welcome).to.exist()
-    expect(welcome.text()).to.match(/Welcome!/)
-  })
-
-  it('Renders an awesome duck image', () => {
-    const duck = _component.find('img')
-    expect(duck).to.exist()
-    expect(duck.attr('alt')).to.match(/This is a duck, because Redux!/)
+  it('Should output a control for each metric', () => {
+    const wrapper = shallow(<HomeView metrics={initialState}  />)
+    const formGroups = wrapper.find(FormControlLabel)
+    expect(formGroups.length).to.equal(Object.keys(initialState).length)
   })
 })

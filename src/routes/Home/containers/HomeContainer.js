@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 
 import HomeView from '../components/HomeView'
+import { toggleMetric } from '../../../reducers/metricsReducer'
 
 // todo: move these to module
 const mapDispatchToProps = {
-    toggleMetric: () => null,
+    toggleMetric,
 }
 
 const mapStateToProps = (state) => ({

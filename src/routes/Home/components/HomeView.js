@@ -3,20 +3,21 @@ import { FormGroup, FormControlLabel } from 'material-ui/Form';
 import Checkbox from 'material-ui/Checkbox';
 import { timeseriesList } from '../../../constants/timeseriesConstants';
 
-export const HomeView = (state) => {
-  console.log('blep ', state);
+export const HomeView = ({ metrics, toggleMetric }) => {
   return (
     <FormGroup row>
-      <FormControlLabel
-      control={
-         <Checkbox
-          checked={true}
-          onChange={() => (console.log('blep'))}
-          value="checkedA"
+      {timeseriesList.map((timeseriesObject) => (
+        metrics && metrics[timeseriesObject.static_name] && <FormControlLabel
+          key={timeseriesObject.static_name}
+          control={
+            <Checkbox
+              checked={metrics[timeseriesObject.static_name].toggled}
+              onChange={() => (toggleMetric(timeseriesObject.static_name))}
+              value={`${timeseriesObject.static_name}_toggle`}
+            />}
+          label={timeseriesObject.name}        
         />
-      }
-      label="Option A"
-      />
+      ))}
     </FormGroup>
   )
 }
