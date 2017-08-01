@@ -51,7 +51,10 @@ const config = {
 // ------------------------------------
 config.module.rules.push({
   test: /\.(js|jsx)$/,
-  exclude: /node_modules/,
+  include: [
+    /src/,
+    /node_modules\/react-d3-basic/
+  ],
   use: [{
     loader: 'babel-loader',
     query: {
