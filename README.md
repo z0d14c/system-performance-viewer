@@ -30,3 +30,4 @@ color scheme: https://scontent.fsnc1-1.fna.fbcdn.net/v/t31.0-8/18319153_79599657
 ## add go testing
 ## separate out go modules
 ## make data look appropriately different across timescales
+## more/smaller components

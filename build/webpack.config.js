@@ -50,6 +50,7 @@ const config = {
 let include = [
   /src/,
   /node_modules\/react-d3-basic/,
+  /node_modules\/react-d3-core/,
 ]
 let exclude;
 if (__TEST__) {

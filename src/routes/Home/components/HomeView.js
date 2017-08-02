@@ -4,6 +4,7 @@ import { FormGroup, FormControlLabel } from 'material-ui/Form';
 import Checkbox from 'material-ui/Checkbox';
 import Paper from 'material-ui/Paper';
 import { withStyles, createStyleSheet } from 'material-ui/styles';
+import ChartPanel from '../../../components/ChartPanel'
 import { timeseriesList } from '../../../constants/timeseriesConstants';
 
 const styleSheet = createStyleSheet(theme => ({
@@ -39,6 +40,7 @@ export class HomeView extends React.Component {
             ))}
           </Grid>
         </FormGroup>
+        <ChartPanel metrics={metrics} />
       </Grid>
     )
   }
