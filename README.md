@@ -38,7 +38,8 @@ features and significant modifications from seed:
 * this react-d3 wrapper does NOT make it easy to label axes -- find way around it or switch to different lin
 
 # other notes and thoughts
-* I'm trying quite a bit of new tech here {material-ui / react-d3 / golang / yarn} are all pretty new to me so i spent some time I could've spent on making the app "better" on learning/experimenting with those tech instead
+* I'm trying quite a bit of new tech here {material-ui / react-d3 / golang / yarn} are all pretty new to me so i spent some time I could've spent on making the app "better" on learning/experimenting with those tech instead.
+* also created wireframes in photoshop which i dont usually use. yes they are ugly http://imgur.com/a/wQmIS
 * on that note, i didnt do a lot of tech evaluation here -- i simply picked some new stuff and dove in. for example, had i known that react-d3's line chart didn't make it easy to label x/y axes, i probably would've just used regular d3 or some other lib for the charts!
 * using material-ui's v1 beta. seems to work fine.
 * overall, I think +1 day of iteration/refinement would go a long way towards making this a more "production-ready" app

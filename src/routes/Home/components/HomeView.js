@@ -1,12 +1,12 @@
 import React from 'react'
 import Grid from 'material-ui/Grid'
-import { FormGroup, FormLabel, FormControl, FormControlLabel } from 'material-ui/Form';
-import Checkbox from 'material-ui/Checkbox';
-import Paper from 'material-ui/Paper';
-import Radio, { RadioGroup } from 'material-ui/Radio';
-import { withStyles, createStyleSheet } from 'material-ui/styles';
+import { FormGroup, FormLabel, FormControl, FormControlLabel } from 'material-ui/Form'
+import Checkbox from 'material-ui/Checkbox'
+import Paper from 'material-ui/Paper'
+import Radio, { RadioGroup } from 'material-ui/Radio'
+import { withStyles, createStyleSheet } from 'material-ui/styles'
 import ChartPanel from '../../../components/ChartPanel'
-import { timeseriesList } from '../../../constants/timeseriesConstants';
+import { timeseriesList } from '../../../constants/timeseriesConstants'
 
 const styleSheet = createStyleSheet(theme => ({
   paper: {
