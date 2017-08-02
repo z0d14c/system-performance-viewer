@@ -47,23 +47,11 @@ const config = {
   ],
 }
 
-let include = [
-  /src/,
-  /node_modules\/react-d3-basic/,
-  /node_modules\/react-d3-core/,
-]
-let exclude;
-if (__TEST__) {
-  include = undefined
-  exclude = /node_modules/
-}
-
 // JavaScript
 // ------------------------------------
 config.module.rules.push({
   test: /\.(js|jsx)$/,
-  include,
-  exclude,
+  exclude: /node_modules/,
   use: [{
     loader: 'babel-loader',
     query: {
@@ -98,6 +86,17 @@ config.module.rules.push({
       ]
     },
   }],
+})
+
+config.module.rules.push({
+	test: /\.(js|jsx)$/,
+	include: [
+		/node_modules\/react-d3-basic/,
+		/node_modules\/react-d3-core/,
+	],
+	use: [{
+		loader: 'babel-loader',
+	}]
 })
 
 // Styles
