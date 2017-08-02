@@ -11,6 +11,7 @@ export const initialState = {
 }
 
 export const TOGGLE_METRIC = 'TOGGLE_METRIC'
+export const STORE_METRICS = 'STORE_METRICS'
 
 export const toggleMetric = (metricName) => ({
     type: TOGGLE_METRIC,
@@ -18,6 +19,26 @@ export const toggleMetric = (metricName) => ({
         metricName,
     }
 })
+
+export const storeMetrics = (metrics) => ({
+    type: STORE_METRICS,
+    payload: {
+        metrics,
+    }
+})
+
+// store metrics fetched from api
+export const storeMetricsReducer = (state, metricsArray) => {
+    const newState = {
+        ...state,
+    }
+    metricsArray.forEach(metric => {
+        newState[metric.static_name].data = {
+            ...metric,
+        }
+    });
+    return newState;
+}
 
 export const toggleMetricReducer = (state, metricName) => {
     const metric = state[metricName];
@@ -35,8 +56,9 @@ export const toggleMetricReducer = (state, metricName) => {
 export default function metricsReducer (state = initialState, action) {
     switch(action.type) {
         case TOGGLE_METRIC:
-            const newState = toggleMetricReducer(state, action.payload.metricName)
-            return newState;
+            return toggleMetricReducer(state, action.payload.metricName)
+        case STORE_METRICS:
+            return storeMetricsReducer(state, action.payload.metrics);
         default:
             return state;
         break;

@@ -2,7 +2,6 @@
 
 import { call, select } from 'redux-saga/effects'
 import { systemViewerMenuSaga } from './systemViewerSagas'
-import { getData } from './fetchSagas'
 
 const getPath = (state) => (
   state.location.pathname
@@ -15,8 +14,6 @@ const routeMap = {
 
 export function* navigationSaga() {
   const path = yield select(getPath)
-  const res = yield call(getData)
-  console.log('res ', res)
   if (routeMap[path]) {
     yield call(routeMap[path])
   } else {

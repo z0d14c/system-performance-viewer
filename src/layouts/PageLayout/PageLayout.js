@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography';
 import './PageLayout.css'
 
 export const PageLayout = ({ children }) => (
-  <Grid container gutter={24}>
+  <Grid container xs={12} gutter={24}>
     <AppBar position="static" color="default">
       <Toolbar>
         <Typography type="title" color="inherit">

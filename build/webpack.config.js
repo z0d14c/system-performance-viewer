@@ -47,14 +47,22 @@ const config = {
   ],
 }
 
+let include = [
+  /src/,
+  /node_modules\/react-d3-basic/,
+]
+let exclude;
+if (__TEST__) {
+  include = undefined
+  exclude = /node_modules/
+}
+
 // JavaScript
 // ------------------------------------
 config.module.rules.push({
   test: /\.(js|jsx)$/,
-  include: [
-    /src/,
-    /node_modules\/react-d3-basic/
-  ],
+  include,
+  exclude,
   use: [{
     loader: 'babel-loader',
     query: {
