@@ -11,8 +11,8 @@ export const MetricChart = (props) => {
         value: item,
         index,
     }))
-    const width = 400
-    const height = 300
+    const width = 350
+    const height = 250
     const margins = {left: 50, right: 50, top: 25, bottom: 25}
     const chartSeries = [{
         field: 'value',

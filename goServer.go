@@ -7,9 +7,10 @@ import (
   "github.com/julienschmidt/httprouter"
   "strings"
   "strconv"
+  "math/rand"
 )
 
-func intArrayToString(a []int) string {
+func intArrayToString(a [8]int) string {
   b := make([]string, len(a))
   for i, v := range a {
     b[i] = strconv.Itoa(v)
@@ -20,8 +21,14 @@ func intArrayToString(a []int) string {
 // { range: [min, max], \"static_name\": "", \"unit\": "", \"data\": []}
 func genHardDriveSpace() string {
   // max 512gb, min 0gb
+  var data [8]int
+  start := 512
+  data[0] = start
   the_range :=[]int{0, 512}
-  data := []int{500, 498, 496, 493, 491, 489, 487, 485}
+  for i := 1; i < 8; i++ {
+    data[i] = data[i-1] - rand.Intn(5)
+  }
+  // data := []int{500, 498, 496, 493, 491, 489, 487, 485}
   output := intArrayToString(data)
   json := fmt.Sprintf("{\"range\":[%v,%v],\"static_name\":\"HARD_DRIVE_SPACE\",\"unit\":\"gb\",\"data\":[%v]}",the_range[0],the_range[1],output)
   return json
@@ -30,7 +37,10 @@ func genHardDriveSpace() string {
 func genNetworkUtilization() string {
   // max 11mbps, min 0mbps
   the_range :=[]int{0, 11}
-  data := []int{11, 5, 8, 2, 3, 6, 8, 4}
+  var data [8]int
+  for i := 0; i < 8; i++ {
+    data[i] = rand.Intn(11)
+  }
   output := intArrayToString(data)
   json := fmt.Sprintf("{\"range\":[%v,%v],\"static_name\":\"NETWORK_UTILIZATION\",\"unit\":\"mbps\",\"data\":[%v]}",the_range[0],the_range[1],output)
   return json
@@ -39,7 +49,10 @@ func genNetworkUtilization() string {
 func genMemoryUtilization() string {
   // max 16gb, min 0gb
   the_range := []int{0, 16}
-  data := []int{16, 14, 12, 14, 12, 13, 12, 16}
+  var data [8]int
+  for i := 0; i < 8; i++ {
+    data[i] = rand.Intn(16)
+  }
   output := intArrayToString(data)
   json := fmt.Sprintf("{\"range\":[%v,%v],\"static_name\":\"MEMORY_UTILIZATION\",\"unit\":\"gb\",\"data\":[%v]}",the_range[0],the_range[1],output)
   return json
@@ -48,7 +61,10 @@ func genMemoryUtilization() string {
 func genCPUUtilization() string {
   // 0-100%
   the_range := []int{0, 100}
-  data := []int{100, 44, 77, 33, 22, 11, 44, 55}
+  var data [8]int
+  for i := 0; i < 8; i++ {
+    data[i] = rand.Intn(100)
+  }
   output := intArrayToString(data)
   json := fmt.Sprintf("{\"range\":[%v,%v],\"static_name\":\"CPU_UTILIZATION\",\"unit\":\"percent\",\"data\":[%v]}",the_range[0],the_range[1],output)
   return json
