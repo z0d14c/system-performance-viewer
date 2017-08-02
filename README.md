@@ -30,7 +30,7 @@ features and significant modifications from seed:
 * add flow
 * add go testing
 * more js tests
-* separate out go modules
+* separate out go modules (e.g. have a mock data generation golang module)
 * make data look appropriately different across timescales
 * add color theme
 * theres a few hacks and bad separation of concerns
@@ -38,13 +38,12 @@ features and significant modifications from seed:
 * this react-d3 wrapper does NOT make it easy to label axes -- find way around it or switch to different lin
 
 # other notes and thoughts
-* I don't usually use this style for my code, such as no semicolons; I don't mind it but I was mostly just adhering to the existing seed's style because I didn't add eslint and didn't want to run through and fix the whole app's style, although i usually would
 * I'm trying quite a bit of new tech here {material-ui / react-d3 / golang / yarn} are all pretty new to me so i spent some time I could've spent on making the app "better" on learning/experimenting with those tech instead
 * on that note, i didnt do a lot of tech evaluation here -- i simply picked some new stuff and dove in. for example, had i known that react-d3's line chart didn't make it easy to label x/y axes, i probably would've just used regular d3 or some other lib for the charts!
 * using material-ui's v1 beta. seems to work fine.
 * overall, I think +1 day of iteration/refinement would go a long way towards making this a more "production-ready" app
 * golang was really fun to work with
 * it hurts to not have flow or typescript
-* need more unit testing coverage for the js
 * switching timescale between 1 hr / 1 week just triggers a randomization of data, would be better to actually have consistency between the two
 * i ran into a few webpack/packaging issues along the way; the main one being that i had to move to a whitelisting `config.test` pattern for the loader to load up react-d3 correctly, and then found out that that broke tests (so testing needs to keep the blacklisting pattern)
+* in the interest of time i ran with the existing seeds style of no semicolons. usually i would configure my own eslint (and add flow or typescript as mentioned) but i didn't this time
