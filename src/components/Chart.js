@@ -1,4 +1,3 @@
-// const Chart = require('react-d3-core').Chart
 import React from 'react'
 const LineChart = require('react-d3-basic').LineChart
 
@@ -15,8 +14,8 @@ export const MetricChart = (props) => {
     const height = 250
     const margins = {left: 50, right: 50, top: 25, bottom: 25}
     const chartSeries = [{
-        field: 'value',
-        name: metric.data.data.unit,
+        field: "value",
+        name: metric.data.unit,
         color: '#ff7f0e',
     }]
     const x = (arg) => (arg.index)

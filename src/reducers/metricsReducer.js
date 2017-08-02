@@ -1,17 +1,19 @@
 const initialMetricState = {
     toggled: true,
     data: {},
-};
+}
 
 export const initialState = {
     HARD_DRIVE_SPACE: {...initialMetricState},
     NETWORK_UTILIZATION: {...initialMetricState},
     MEMORY_UTILIZATION: {...initialMetricState},
     CPU_UTILIZATION: {...initialMetricState},
+    timescale: 'day',    
 }
 
 export const TOGGLE_METRIC = 'TOGGLE_METRIC'
 export const STORE_METRICS = 'STORE_METRICS'
+export const TOGGLE_TIMESCALE = 'TOGGLE_TIMESCALE'
 
 export const toggleMetric = (metricName) => ({
     type: TOGGLE_METRIC,
@@ -27,6 +29,13 @@ export const storeMetrics = (metrics) => ({
     }
 })
 
+export const toggleTimescale = (timescale) => ({
+    type: TOGGLE_TIMESCALE,
+    payload: {
+        timescale,
+    }
+})
+
 // store metrics fetched from api
 export const storeMetricsReducer = (state, metricsArray) => {
     const newState = {
@@ -37,7 +46,7 @@ export const storeMetricsReducer = (state, metricsArray) => {
             ...metric,
         }
     });
-    return newState;
+    return newState
 }
 
 export const toggleMetricReducer = (state, metricName) => {
@@ -50,7 +59,18 @@ export const toggleMetricReducer = (state, metricName) => {
             toggled: newMetricToggle,
         }
     }
-    return newState;
+    return newState
+}
+
+export const toggleTimescaleReducer = (state, timescale) => {
+    if (!timescale) {
+        return state
+    }
+    const newState = {
+        ...state,
+        timescale,
+    }
+    return newState
 }
 
 export default function metricsReducer (state = initialState, action) {
@@ -59,6 +79,8 @@ export default function metricsReducer (state = initialState, action) {
             return toggleMetricReducer(state, action.payload.metricName)
         case STORE_METRICS:
             return storeMetricsReducer(state, action.payload.metrics);
+        case TOGGLE_TIMESCALE:
+            return toggleTimescaleReducer(state, action.payload.timescale);
         default:
             return state;
         break;

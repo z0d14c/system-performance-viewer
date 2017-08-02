@@ -24,9 +24,8 @@ const styleSheet = createStyleSheet(theme => ({
 
 export class HomeView extends React.Component {
   render () {
-    const { metrics, toggleMetric, classes } = this.props
-    const timescale = '1week'
-    // todo: place checkboxes in their own component
+    const { metrics, toggleMetric, classes, toggleTimescale } = this.props
+    const timescale = metrics.timescale
     return (
       <Grid container xs={12} justify="center" align="center" className={classes.control}>
         <Grid item xs={12} m={9}>
@@ -46,17 +45,17 @@ export class HomeView extends React.Component {
           </Grid>
         </Grid>
         <Grid item xs={12} m={3}>
-          <FormControl required>
+          <FormControl>
             <FormLabel>Timescale</FormLabel>
             <RadioGroup
-              aria-label="gender"
-              name="gender"
+              aria-label="timescale"
+              name="timescale"
               className={classes.group}
               selectedValue={timescale}
-              onChange={() => null}
+              onChange={(e, x) => (toggleTimescale(x))}
             >
-              <FormControlLabel value="1day" control={<Radio />} label="1 Day" />
-              <FormControlLabel value="1week" control={<Radio />} label="1 Week" />
+              <FormControlLabel value="day" control={<Radio />} label="1 Day" />
+              <FormControlLabel value="week" control={<Radio />} label="1 Week" />
             </RadioGroup>
           </FormControl>
         </Grid>
