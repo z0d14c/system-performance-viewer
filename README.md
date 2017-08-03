@@ -24,7 +24,9 @@ This how-to should be run from the root of this project directory unless otherwi
 * go get github.com/julienschmidt/httprouter
 * cd <PROJECT_DIR> (wherever this project is cloned)
 3. `yarn build` (must build before serving, and each time after changing code)
-4. `yarn goserve` to start (navigate to localhost:3000 to view the application)
+* this will place packaged code inside `dist/`
+4. `yarn goserve` to start
+* (navigate to localhost:3000 to view the application)
 5. `yarn test` to test
 
 # future work / pain points
