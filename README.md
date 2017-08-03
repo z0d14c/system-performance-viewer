@@ -38,6 +38,8 @@ This how-to should be run from the root of this project directory unless otherwi
 * custom color theming
 * more and smaller components
 * the react-d3-basic components do not make it easy to label axes or have other granular customization -- should use one of the lower level react-d3 libs or switch to regular d3
+* more comments
+* remove location reducer/vestigial code
 
 # other notes and thoughts
 * I'm trying quite a bit of new-to-me tech here {material-ui / react-d3 / golang / yarn} 
@@ -46,3 +48,4 @@ This how-to should be run from the root of this project directory unless otherwi
 * golang was really fun to work with; next steps would be modularizing it and testing
 * it hurts to not have flow, typescript, or linting -- these would be next priority for javascript additions
 * i ran into a few webpack/packaging issues along the way; the main one being that i had to move to a whitelisting `config.test` pattern for the loader to load up react-d3 correctly, and then found out that that broke tests (so testing needs to keep the blacklisting pattern)
+* i prefer to use `redux-little-router` https://github.com/FormidableLabs/redux-little-router but didn't really need to worry about it as there is only one page in this app
