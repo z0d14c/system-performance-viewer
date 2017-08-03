@@ -1,5 +1,5 @@
 const initialMetricState = {
-    toggled: true,
+    toggled: false,
     data: {},
 }
 

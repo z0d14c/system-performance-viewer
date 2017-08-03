@@ -9,7 +9,7 @@ export function* fetchAndStoreMetrics() {
 export function* systemViewerMenuSaga() {
     try {
         yield call(fetchAndStoreMetrics)
-        yield takeEvery(TOGGLE_TIMESCALE, fetchAndStoreMetrics)
+        // yield takeEvery(TOGGLE_TIMESCALE, fetchAndStoreMetrics)
     } catch (e) {
         // error
         console.log('error ', e);

@@ -13,7 +13,7 @@ features and significant modifications from seed:
 
 # system package requirements
 * golang
-* node/npm
+* node/npm (node at least version 7.9)
 * yarn
 
 # how-to
@@ -29,7 +29,7 @@ features and significant modifications from seed:
 * add eslint
 * add flow
 * add go testing
-* more js tests
+* tests for sagas
 * separate out go modules (e.g. have a mock data generation golang module)
 * make data look appropriately different across timescales
 * add color theme

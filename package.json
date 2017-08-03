@@ -12,7 +12,7 @@
     "test:watch": "npm test -- --watch",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "goserve": "go run goServer.go"
+    "goserve": "go run server/goServer.go"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "express": "^4.14.0",
     "material-ui": "next",
     "material-ui-icons": "^1.0.0-alpha.19",
+    "moment": "^2.18.1",
     "object-assign": "^4.1.1",
     "promise": "^7.1.1",
     "prop-types": "^15.5.10",
